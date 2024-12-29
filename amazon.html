@@ -10,13 +10,14 @@
     <script src="amazon_js.js"></script>
     <div class="navbar">
         <ul class="first-header">
-            <li class="navbar_items" id="navbar_items_1">
+            <li class="navbar_items" id="navbar_items_1" onclick="window.location.href=window.location.href;"></li>
             </li>
             <li class="navbar_items" id="navbar_items_2"><div class="navbar_items_2_1">Delivering to Bengaluru 562130</div>
             <div class="navbar_items_2_2">Update location</div></li>
             <li class="navbar_items" id="navbar_items_3"><div class="search_bar">
-                <div class="dropdown">
-                    All
+                <div class="dropdown" onclick="showHideDropdown(event)">
+                    <div>All</div>
+                    <i class="dropDownMark"></i>
                 </div>
                 <ul>
                     <li>Electronics</li>
@@ -24,15 +25,21 @@
                     <li>Stationay</li>
                     <li>Pharmacy</li>
                     <li>Fresh</li>
+                    <li>Books</li>
+                    <li>Computers</li>
+                    <li>Deals</li>
+                    <li>Digital Music</li>
+                    <li>Video Games</li>
+                    <li>Women's Fashion</li>
                     </ul>
 
                 <input type="text" placeholder="Search Amazon.in">
 
-                <div class="search_icon">Icon</div>
+                <div class="search_icon"></div>
             </div></li>
-            <li class="navbar_items" id="navbar_items_4"><span class="language_icon"></span><span style="font-family:Arial, sans-serif; font-size: 14px; font-weight: 700;">EN</span></li>
+            <li class="navbar_items" id="navbar_items_4"><span class="language_icon"></span><span style="font-family:Arial, sans-serif; font-size: 14px; font-weight: 700; margin-top: 1px;">EN</span></li>
             <li class="navbar_items" id="navbar_items_5">
-                <div class="sign_in">Hello, sign in</div>
+                <a href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" style="text-decoration: none; color: white;" class="sign_in">Hello, sign in</a>
                 <div class="account_list">Account & Lists</div>
             </li>
             <li class="navbar_items" id="navbar_items_6"><div class="return_orders">
@@ -56,14 +63,14 @@
     </div>
 
     <div class="crousel_container">
-        <span class="crousel_items" id="c_i_1">1</span>
+        <span class="crousel_items" id="c_i_1"><img src="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg" alt=""></span>
         <span class="crousel_items" id="c_i_2"><img src="https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg" alt=""></span>
-        <span class="crousel_items" id="c_i_3">3</span>
-        <span class="crousel_items" id="c_i_4">4</span>
+        <span class="crousel_items" id="c_i_3"><img src="https://m.media-amazon.com/images/I/71VcGrxQRBL._SX3000_.jpg" alt=""></span>
+        <span class="crousel_items" id="c_i_4"><img src="https://m.media-amazon.com/images/I/71qcoYgEhzL._SX3000_.jpg" alt=""></span>
     </div>
     <div class="crousel_arrows">
-        <div class="left_arrow"><</div>
-        <div class="right_arrow">></div>
+        <div class="left_arrow" onclick="amazonBigCrouselClick(event,'left')"></div>
+        <div class="right_arrow" onclick="amazonBigCrouselClick(event,'right')"></div>
     </div>
 
     <div class="crousel_bar">You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. <a href="amazon.com">here to go to amazon.in</a>
@@ -161,10 +168,10 @@
 
 
 
-    <div class="crousel_strip">
+    <div class="crousel_strip" onmouseover="displayLeftRightArrows(1)" onmouseout="hideLeftRightArrows(1)">
 
         <div class="crousel_strip_header">Best Sellers in Home & Kitchen</div>
-        <div class="crousel_strip_left" onclick="shiftRight(event);"> < </div>
+        <div class="crousel_strip_left crousel_strip_left_1" onclick="crouselClick(event,'left');"> <span class="feed-arrow-left"></span> </div>
         <div class="crousel_strip_items">
             <ul>
                 
@@ -176,18 +183,562 @@
                 <li class="crousel_strip_items_element"><img src="https://m.media-amazon.com/images/I/61mdPtC0iIL._AC_SY200_.jpg" alt="" srcset=""></li>
                 <li class="crousel_strip_items_element"><img src="https://m.media-amazon.com/images/I/71pdJMZpB7L._AC_SY200_.jpg" alt="" srcset=""></li>
                 <li class="crousel_strip_items_element"><img src="https://m.media-amazon.com/images/I/81Cn1+lUraL._AC_SY200_.jpg" alt="" srcset=""></li>
-                <li class="crousel_strip_items_element"></li>
-                <li class="crousel_strip_items_element"></li>
-                <li class="crousel_strip_items_element"></li>
-                <li class="crousel_strip_items_element"></li>
-                <li class="crousel_strip_items_element"></li>
-                <li class="crousel_strip_items_element"></li>
 
 
             </ul></div>
-        <div class="crousel_strip_right" onclick="shiftLeft(event);"> > </div>
-        <div class="crousel_strip_slider">Stuff Slider</div>
+        <div class="crousel_strip_right crousel_strip_right_1" onclick="crouselClick(event,'right');"> <span class="feed-arrow-right"></span> </div>
 
+    </div>
+
+
+
+
+    <div class="crousel_strip" onmouseover="displayLeftRightArrows(2)" onmouseout="hideLeftRightArrows(2)">
+
+        <div class="crousel_strip_header">Best Sellers in Clothing, Shoes & Jewelry</div>
+        <div class="crousel_strip_left crousel_strip_left_2" onclick="crouselClick2(event,'left');"> <span class="feed-arrow-left"></span> </div>
+        <div class="crousel_strip_items_2">
+            <ul>
+                
+                <li class="crousel_strip_items_element_2" style="width: 200px;"><img src="https://m.media-amazon.com/images/I/81QKjnVsIoL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 150px;"><img src="https://m.media-amazon.com/images/I/61neCjTolQL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 320px; height: 110px;margin-top: 20px;"><img src="https://m.media-amazon.com/images/I/61SuPkDGYfL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 150px;"><img src="https://m.media-amazon.com/images/I/61C+zURu0EL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 100px;"><img src="https://m.media-amazon.com/images/I/61IqZD8hYDL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 150px;"><img src="https://m.media-amazon.com/images/I/61C-skMeafL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 120px;"><img src="https://m.media-amazon.com/images/I/61Y8pQkviDL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 150px;"><img src="https://m.media-amazon.com/images/I/9171uzu8PEL._AC_SY200_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_2" style="width: 150px;"><img src="https://m.media-amazon.com/images/I/814hp8QMsjL._AC_SY200_.jpg" alt="" srcset=""></li>
+
+
+            </ul></div>
+        <div class="crousel_strip_right crousel_strip_right_2" onclick="crouselClick2(event,'right');"> <span class="feed-arrow-right"></span> </div>
+
+    </div>
+
+
+
+
+    
+
+
+
+    <div class="crousel_box">
+        <div class="crousel_box_items">
+
+        <div class="crousel_box_items_heading">Gamming accessories</div>
+        <div class="crousel_box_items_elements">
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Headset_1x._SY116_CB667159060_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Headsets</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Keyboard_1x._SY116_CB667159063_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Keyboards</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Mouse_1x._SY116_CB667159063_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Computer mice</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2021/June/Fuji_Quad_Chair_1x._SY116_CB667159060_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Chairs</div></div>
+
+        </div>
+        <div class="crousel_box_items_seemore">See more</div>
+
+        </div>
+        <div class="crousel_box_items"><div class="crousel_box_items_heading">Shop deals in Fashion</div>
+        <div class="crousel_box_items_elements">
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_BOTTOMS_1x._SY116_CB624172947_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Jeans under $50</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_TOPS_1x._SY116_CB623353881_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Tops under $25</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_DRESSES_1x._SY116_CB623353881_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Dresses under $30</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_SHOES_1x._SY116_CB624172947_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Shoes under $50</div></div>
+
+        </div>
+        <div class="crousel_box_items_seemore">See all deals</div></div>
+
+        <div class="crousel_box_items"><div class="crousel_box_items_heading">Refresh your space</div>
+        <div class="crousel_box_items_elements">
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_LP-HP_B08MYX5Q2W_01.23._SY116_CB619238939_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Dining</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_home_B08RCCP3HV_01.23._SY116_CB619238939_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Home</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_kitchen_B0126LMDFK_01.23._SY116_CB619238939_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Kitchen</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/launchpad/2023/Gateway/January/DesktopQuadCat_186x116_health-beauty_B07662GN57_01.23._SY116_CB619238939_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Health and Beauty</div></div>
+
+        </div>
+        <div class="crousel_box_items_seemore">See more</div></div>
+
+
+        <div class="crousel_box_items">
+
+            <div class="crousel_box_items_heading">New home arrivals under $50</div>
+        <div class="crousel_box_items_elements">
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HomeLifestyle/HomeSummerFlip/Homepage/QuadCards/Home_Flip_Summer_2024_315_HP_NewArrivals_QuadCard_D_01_1x._SY116_CB555960040_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Kitchen & dining</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HomeLifestyle/HomeSummerFlip/Homepage/QuadCards/Home_Flip_Summer_2024_316_HP_NewArrivals_QuadCard_D_02_1x._SY116_CB555960040_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Home improvement</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HomeLifestyle/HomeSummerFlip/Homepage/QuadCards/Home_Flip_Summer_2024_317_HP_NewArrivals_QuadCard_D_03_1x._SY116_CB555960040_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Décor</div></div>
+            <div class="crousel_box_items_elements_items"><img src="https://images-na.ssl-images-amazon.com/images/G/01/DiscoTec/2024/HomeLifestyle/HomeSummerFlip/Homepage/QuadCards/Home_Flip_Summer_2024_318_HP_NewArrivals_QuadCard_D_04_1x._SY116_CB555960040_.jpg" alt=""><div class="crousel_box_items_elements_items_name">Bedding & bath</div></div>
+
+        </div>
+        <div class="crousel_box_items_seemore">See more</div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="crousel_strip" onmouseover="displayLeftRightArrows(3)" onmouseout="hideLeftRightArrows(3)">
+
+        <div class="crousel_strip_header">Best Sellers in Electronics, Toys & Fashion</div>
+        <div class="crousel_strip_left crousel_strip_left_3" onclick="crouselClick3(event,'left');"> <span class="feed-arrow-left"></span> </div>
+        <div class="crousel_strip_items">
+            <ul>
+                
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Holiday_deals_1X_EN._CB539178044_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Most_loved_deals_1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Deals_under_50_1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Deals_on_Computer_1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Deals_on_Fashion_1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Deals_on_Toys__Games_1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Gift_guides_1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+                <li class="crousel_strip_items_element_3"><img src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/Holiday_Shovler/Fuji_HolidayGG_Shoveler_Holiday_Fashion__1X_EN._CB541659723_.jpg" alt="" srcset=""></li>
+
+
+            </ul></div>
+        <div class="crousel_strip_right crousel_strip_right_3" onclick="crouselClick3(event,'right');"> <span class="feed-arrow-right"></span> </div>
+
+    </div>
+
+
+
+
+
+    <div class="personalized">
+        <div class="personalized_items">See personalized recommendations</div>
+        <a href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" class="personalized_items">Sign in</a>
+        <div class="personalized_items">New customer? <a href="#">Start here</a></div>
+    </div>
+
+    <div class="footer">
+        <div class="backtotop">
+            Back to top
+        </div>
+
+        <div class="amazon_know_us">
+            
+            <div class="know_us_items"><ul><li style="font-size: 16px;font-weight: 700;">Get to Know Us</li><li>Careers</li><li>Blog</li><li>About Amazon</li><li>Investor Relations</li><li>Amazon Devices</li><li>Amazon Science</li></ul></div>
+            <div class="know_us_items"><ul><li style="font-size: 16px;font-weight: 700;">Make Money with Us</li><li>Sell products on Amazon</li><li>Sell on Amazon Business</li><li>Sell apps on Amazon</li><li>Become an Affiliate</li><li>Advertise Your Products</li><li>Self-Publish with Us</li><li>Host an Amazon Hub</li><li>> See More Make Money with Us</li></ul></div>
+            <div class="know_us_items"><ul><li style="font-size: 16px;font-weight: 700;">Amazon Payment Products</li><li>Amazon Business Card</li><li>Shop with Points</li><li>Reload Your Balance</li><li>Amazon Currency Converter</li></ul></div>
+            <div class="know_us_items"><ul><li style="font-size: 16px;font-weight: 700;">Let Us Help You</li><li>Amazon and COVID-19</li><li>Your Account</li><li>Your Orders</li><li>Shipping Rates & Policies</li><li>Returns & Replacements</li><li>Manage Your Content and Devices</li><li>Help</li></ul></div>
+
+        </div>
+
+        <div class="amazon_logo_container">
+        <div class="amazon_logo">
+            <div class="amazon_logo_items"></div>
+            <div class="amazon_logo_items">
+            
+                <div class="amazon_logo_items_globe"></div>
+                <div class="amazon_logo_items_lang">English</div>
+                <div class="amazon_logo_items_arrow"></div>
+                
+            </div>
+            <div class="amazon_logo_items">$ USD-U.S.Dollar</div>
+            <div class="amazon_logo_items">
+                <div class="amazon_logo_items_flag"></div>
+                <div class="amazon_logo_items_country">United States</div>
+                </div>
+        </div>
+        </div>
+
+        <div class="footer_black">
+            <div class="footer_contents">
+                <div class="footer_contents_lists">
+
+                    <div class="footer_contents_lists_subList">
+                        <ul>
+                            <li>
+                            Amazon
+                            Music
+                            </li>
+                            <li>
+                            Stream
+                            millions
+                            of songs
+                            </li>
+                    </ul>
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                    <ul>
+                        <li>
+                            Amazon Ads
+                        </li>
+                        <li>
+                            Reach customers
+                            wherever they
+                            spend their time
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                6pm
+                            </li>
+                            <li>
+                                Score deals
+                                on fashion brands
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                AbeBooks
+                            </li>
+                            <li>
+                                Books, art
+                                & collectibles
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                ACX
+                            </li>
+                            <li>
+                                Audiobook Publishing
+                                Made Easy
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Box Office Mojo
+                            </li>
+                            <li>
+                                Find Movie
+                                Box Office Data
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Veego
+                            </li>
+                            <li>
+                                Shipping Software
+                                Inventory
+                                Management
+                            </li>
+                        </ul>
+
+                    </div>
+                    
+                
+                </div>
+                <div class="footer_contents_lists">
+                    <div class="footer_contents_lists_subList">
+                        <ul>
+                            <li>
+                                Amazon
+                                Business
+                                
+                            </li>
+                            <li>
+                                Everything
+                                For
+                                Your
+                                Business
+                            </li>
+                    </ul>
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                    <ul>
+                        <li>
+                            AmazonGlobal
+
+                        </li>
+                        <li>
+                            Ship Orders Internationally
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Home Services
+
+                            </li>
+                            <li>
+                                Experienced Pros
+Happiness
+Guarantee
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Amazon Web Services
+
+                            </li>
+                            <li>
+                                Scalable Cloud
+Computing
+Services
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Audible
+
+                            </li>
+                            <li>
+                                Listen to Books &
+Original
+Audio Performances
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Sell on Amazon
+                            </li>
+                            <li>
+                                Start a Selling
+                                Account
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Goodreads
+                            </li>
+                            <li>
+                                Book reviews
+                                &
+                                recommendations
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="footer_contents_lists">
+                    <div class="footer_contents_lists_subList">
+                        <ul>
+                            <li>
+                                IMDb
+                                
+                            </li>
+                            <li>
+                                Movies, TV
+                                & Celebrities
+                            </li>
+                    </ul>
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                    <ul>
+                        <li>
+                            IMDbPro
+
+                        </li>
+                        <li>
+                            Get Info
+                            Entertainment
+                            Professionals
+                            Need
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Kindle Direct
+                                Publishing
+
+                            </li>
+                            <li>
+                                Indie Digital & Print
+                                Publishing
+                                Made Easy
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Prime Video
+                                Direct
+
+                            </li>
+                            <li>
+                                Video
+                                Distribution
+                                Made Easy
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Shopbop
+
+                            </li>
+                            <li>
+                                Designer
+                                Fashion Brands
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Woot!
+
+                            </li>
+                            <li>
+                                Deals and
+                                Shenanigans
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Zappos
+
+                            </li>
+                            <li>
+                                Shoes &
+                                Clothing
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="footer_contents_lists">
+                    <div class="footer_contents_lists_subList">
+                        <ul>
+                            <li>
+                                Ring
+                                
+                            </li>
+                            <li>
+                                Smart Home
+                                Security
+                                Systems
+                            </li>
+                    </ul>
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                    <ul>
+                        <li>
+                            eero WiFi
+
+                        </li>
+                        <li>
+                            Stream 4K Video
+                            in Every Room
+                        </li>
+                    </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Blink
+                            </li>
+                            <li>
+                                Smart Security for Every Home
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Neighbors App
+                            </li>
+                            <li>
+                                Real-Time Crime & Safety Alerts
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                Amazon Subscription Boxes
+
+                            </li>
+                            <li>
+                                Top subscription boxes -
+                                right to your doon
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="footer_contents_lists_subList">
+
+                        <ul>
+                            <li>
+                                PillPack
+                            </li>
+                            <li>
+                                Pharmacy Simplified
+                            </li>
+                        </ul>
+
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="amazon_privacy">
+                <div class="amazon_privacy_list"><div class="amazon_privacy_list_items">Conditions of Use</div>
+                <div class="amazon_privacy_list_items">Privacy Notice</div>
+                <div class="amazon_privacy_list_items">Consumer Health Data Privacy Disclosure</div>
+                <div class="amazon_privacy_list_items">Your Ads Privacy Choices <span style="background-image: url(https://m.media-amazon.com/images/G/01/gno/sprites/nav-sprite-global-1x-reorg-privacy._CB542251494_.png); background-position-x: -136px; background-position-y: -380px;width:29px;position: relative;top: 2.25px;height: 14px;display: inline-block;"></span></div>
+                <div class="amazon_privacy_list_items">© 1996-2024, Amazon.com, Inc. or its affiliates</div>
+            </div>
+                
+            </div>
+        </div>
+        
     </div>
 
 </body>
